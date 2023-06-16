@@ -1,0 +1,37 @@
+vector<long long> lcmAndGcd(long long A , long long B) {
+        // code here
+      /*   vector<long long>ans;
+         int i;
+        for( i=min(A,B);i>=0;i--)
+        {
+            if(A%i==0 && B%i==0)
+            {
+           
+             break;
+            }
+        }
+        long long lcm=(A*B)/i;
+        ans.push_back(lcm);
+          ans.push_back(i);
+        
+        return ans;
+        */
+        //optimised code
+         vector<long long>ans;
+          long long hcf;
+        long long x=A;
+       long long y=B;
+        while(A!=0 && B!=0)
+        {
+            if(A>B)A=A%B;
+              else B=B%A;
+        }
+      if(A==0)hcf=B;
+      else hcf=A;
+        
+        long long lcm=(x*y)/hcf;
+        ans.push_back(lcm);
+          ans.push_back(hcf);
+          
+          return ans;
+    }
